@@ -1,0 +1,47 @@
+Samarbeid
+Vi møttes enten på skolen eller hos en av oss. Her hadde vi tilgang til TV-skjermer og kodet på disse slik at begge kunne bidra. Ellers brukte vi GitHub til å dele kode. Dette gjorde at vi kunne kode individuelt hjemme. Det skal nevnes at Fredrik har et høyere nivå på kodingen og har nok bidratt mer her.
+Design
+Vi har forsøkt å gjøre designet så enkelt som mulig. Dette begrunnes også med at vi har fokusert på å gjøre koden så bra som mulig fremfor design. I tillegg synes vi at Laravel sitt design egentlig var ganske enkelt og greit. Vi valgte derfor å gå utifra det som laravel hadde satt opp for oss, og bare modifisere dette til en ferdig produkt som vi syntes så greit ut.
+Databaser
+I databasen ligger 6 tables: categories, listings, messages, migrations, password_resets og users. Vi har ikke brukt noen fremmednøkler i phpMyAdmin fordi laravel fikset egne koblinger via ‘php artisan tinker’. Hvor listings er kobler til categories og users via id, messages er kobler til listings og users via id.
+Framework
+Vi har utelukkende brukt Laravel. Dette er et framework ingen av oss har jobbet med før og det tok litt tid å sette seg inn i det før vi kunne begynne på selve kodingen. Laravel tar litt tid å forstå, og er relativt komplisert, men når man forstår det så gjør det mye av kodene mye lettere.
+ 
+Kode forklaring
+(hva som er laget eller redigert, ellers er det mer forklart i comments i kodene på respektive sider)
+Filer/mapper som er laget:
+•	Mappe->Listings (oblig3/resources/views/listings)
+o	Index.blade.php
+o	Show.blade.php
+o	Create.blade.php
+o	Listing.blade.php
+•	Mappe->categories (oblig3/resources/views/categories)
+o	Index.blade.php
+o	Show.blade.php
+o	create.blade.php
+•	errors.blade.php (oblig3/resources/layouts)
+•	CategoriesController.php (oblig3/app/http/controllers)
+•	ListingsController.php (oblig3/app/http/controllers)
+•	MessagesController.php (oblig3/app/http/controllers)
+•	Category.php (oblig3/app)
+•	Listing.php (oblig3/app)
+•	Message.php (oblig3/app)
+•	style.css (oblig3/public/css)
+•	Mappe->migrations_brukte (oblig3/database/migrations)
+o	laget for å legge migrations som går igjennom om det kommer error (error fører til at den stopper migrations og da ikke sende resten av filene)
+o	2017_05_29_133112_create_category_table.php
+o	2017_05_29_133702_create_listings_table.php
+o	2017_06_02_144535_create_messages_table.php
+
+Filer som er endret:
+•	Home.blade.php (i mappe -> oblig3/resources/views)
+•	HomeController.php (oblig3/app/http/controllers)
+•	Welcome.blade.php (i mappe -> oblig3/resources/views)
+•	App.blade.php (I mappe -> oblig/resources/layouts)
+•	.env (oblig3/) Endret DB_DATABASE til vår database (oblig3) og koblet oss til
+•	Web.php (oblig3/routes)
+•	User.php (oblig3/app/User.php)
+•	Login.balde.php (oblig3/resources/views/auth)
+•	Register.blade.php (oblig3/resources/views/auth)
+•	2014_10_12_000001_create_users_table.php (oblig3/database/migrations)
+•	2014_10_12_100000_create_password_resets_table (oblig3/database/migrations)
